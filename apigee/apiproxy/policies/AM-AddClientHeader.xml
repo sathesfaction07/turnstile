@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignMessage name="AM-AddClientHeader">
+  <DisplayName>AM-AddClientHeader</DisplayName>
+  <Set>
+    <Headers>
+      <Header name="X-Apigee-App">{verifyapikey.VA-VerifyAPIKey.app.name}</Header>
+    </Headers>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

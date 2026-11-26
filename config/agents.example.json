@@ -1,0 +1,39 @@
+{
+ "_comment": "Development identities for the local mock. Tokens are dev-claims-token, dev-service-token and dev-analytics-token; production tokens come from the customer's identity provider and only their hashes are stored.",
+ "agents": [
+  {
+   "client_id": "claims-intake-agent",
+   "token_sha256": "8a4325dd173b85500e95e0231ff96451f4dfd01f340a4e73f817f9365f1bbfde",
+   "scopes": [
+    "policy:read",
+    "claims:read",
+    "claims:write"
+   ],
+   "pii": "masked",
+   "requests_per_minute": 60,
+   "description": "Takes first notice of loss from policyholders."
+  },
+  {
+   "client_id": "service-desk-agent",
+   "token_sha256": "b026280aade7739ad61dae6998b883b83d2d6d514901cb99f316f172016c7e3f",
+   "scopes": [
+    "policy:read",
+    "address:write"
+   ],
+   "pii": "full",
+   "requests_per_minute": 60,
+   "description": "Answers policy questions and updates contact details."
+  },
+  {
+   "client_id": "analytics-agent",
+   "token_sha256": "12e7a56bd164209e17b18f7897cb2e7863ebbdaa5bff8340b995625855bda013",
+   "scopes": [
+    "policy:read",
+    "claims:read"
+   ],
+   "pii": "none",
+   "requests_per_minute": 30,
+   "description": "Summarises portfolios; never sees personal data or writes."
+  }
+ ]
+}

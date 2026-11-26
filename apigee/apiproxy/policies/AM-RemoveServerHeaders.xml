@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignMessage name="AM-RemoveServerHeaders">
+  <DisplayName>AM-RemoveServerHeaders</DisplayName>
+  <Remove>
+    <Headers>
+      <Header name="server"/>
+      <Header name="x-powered-by"/>
+    </Headers>
+  </Remove>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<APIProxy name="turnstile">
+  <DisplayName>Turnstile MCP gateway</DisplayName>
+  <Description>Edge for the policy-system MCP gateway: one API key per agent team, spike arrest, daily quota, JSON threat protection.</Description>
+  <BasePaths>/turnstile</BasePaths>
+  <Policies>
+    <Policy>VA-VerifyAPIKey</Policy>
+    <Policy>SA-SpikeArrest</Policy>
+    <Policy>Q-DailyQuota</Policy>
+    <Policy>JTP-JSONThreatProtection</Policy>
+    <Policy>RF-MethodNotAllowed</Policy>
+    <Policy>AM-StripAPIKey</Policy>
+    <Policy>AM-AddClientHeader</Policy>
+    <Policy>AM-RemoveServerHeaders</Policy>
+    <Policy>AM-RateLimitedResponse</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpikeArrest name="SA-SpikeArrest">
+  <DisplayName>SA-SpikeArrest</DisplayName>
+  <Identifier ref="verifyapikey.VA-VerifyAPIKey.client_id"/>
+  <Rate>10ps</Rate>
+  <UseEffectiveCount>true</UseEffectiveCount>
+</SpikeArrest>

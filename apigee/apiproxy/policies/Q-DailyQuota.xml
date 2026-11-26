@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Quota name="Q-DailyQuota" type="calendar">
+  <DisplayName>Q-DailyQuota</DisplayName>
+  <Identifier ref="verifyapikey.VA-VerifyAPIKey.client_id"/>
+  <Allow count="20000" countRef="verifyapikey.VA-VerifyAPIKey.apiproduct.developer.quota.limit"/>
+  <Interval ref="verifyapikey.VA-VerifyAPIKey.apiproduct.developer.quota.interval">1</Interval>
+  <TimeUnit ref="verifyapikey.VA-VerifyAPIKey.apiproduct.developer.quota.timeunit">day</TimeUnit>
+  <StartTime>2026-01-01 00:00:00</StartTime>
+  <Distributed>true</Distributed>
+  <Synchronous>false</Synchronous>
+</Quota>

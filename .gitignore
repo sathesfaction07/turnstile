@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+dist/
+*.egg-info/
+.coverage
+coverage.xml
+.ruff_cache/
+.pytest_cache/
+.terraform/
+*.tfstate*
+node_modules/
+runs/

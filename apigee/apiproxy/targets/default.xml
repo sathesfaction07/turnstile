@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TargetEndpoint name="default">
+  <Description>The gateway on Cloud Run, reached privately: the service accepts traffic only from the internal load balancer, so the agent's own Authorization header passes through untouched to the gateway, which verifies it.</Description>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <Flows/>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPTargetConnection>
+    <Properties>
+      <Property name="io.timeout.millis">30000</Property>
+    </Properties>
+    <URL>https://turnstile.internal.example.com/mcp</URL>
+  </HTTPTargetConnection>
+</TargetEndpoint>

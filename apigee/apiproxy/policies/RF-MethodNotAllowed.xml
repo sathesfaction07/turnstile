@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RaiseFault name="RF-MethodNotAllowed">
+  <DisplayName>RF-MethodNotAllowed</DisplayName>
+  <FaultResponse>
+    <Set>
+      <StatusCode>405</StatusCode>
+      <ReasonPhrase>Method Not Allowed</ReasonPhrase>
+      <Headers>
+        <Header name="Allow">POST</Header>
+      </Headers>
+      <Payload contentType="application/json">{"error": "only POST is accepted"}</Payload>
+    </Set>
+  </FaultResponse>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

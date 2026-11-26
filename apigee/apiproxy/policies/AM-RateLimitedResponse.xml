@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignMessage name="AM-RateLimitedResponse">
+  <DisplayName>AM-RateLimitedResponse</DisplayName>
+  <Set>
+    <StatusCode>429</StatusCode>
+    <ReasonPhrase>Too Many Requests</ReasonPhrase>
+    <Headers>
+      <Header name="Retry-After">60</Header>
+    </Headers>
+    <Payload contentType="application/json">{"error": "rate limit for this agent team reached", "code": "rate_limited"}</Payload>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
