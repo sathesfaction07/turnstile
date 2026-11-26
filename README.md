@@ -55,7 +55,7 @@ So the job was one controlled way in for every agent, not one more SOAP client.
 | Gateway tools: identity, scopes, rate limits, validation, redaction, confirmed writes, reconciliation, audit | `src/turnstile/gateway/core.py` |
 | MCP server with bearer-token auth (MCP resource-server auth, tokens bound to the gateway's URL) | `src/turnstile/gateway/mcp_app.py` |
 | A claims-intake agent on Google ADK that only knows the gateway, through `McpToolset` | `src/turnstile/agent.py` |
-| Apigee X proxy bundle (apigeelint: 0 errors, 0 warnings in CI) | `apigee/apiproxy/` |
+| Apigee X proxy bundle, with per-environment target servers (apigeelint runs in CI) | `apigee/` |
 | Cloud Run, Secret Manager and VPC egress in Terraform | `infra/`, `Dockerfile` |
 | The attack suite and the latency measurement | `src/turnstile/attacks.py` |
 

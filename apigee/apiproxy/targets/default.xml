@@ -14,13 +14,8 @@
     <Properties>
       <Property name="io.timeout.millis">30000</Property>
     </Properties>
-    <SSLInfo>
-      <Enabled>true</Enabled>
-      <Enforce>true</Enforce>
-      <IgnoreValidationErrors>false</IgnoreValidationErrors>
-    </SSLInfo>
-    <!-- Target server "turnstile-gateway" is defined per environment (the internal load
-         balancer's address), so the same bundle deploys to test and production. -->
+    <!-- Target server "turnstile-gateway", with its TLS settings, is defined per environment
+         (apigee/environments/*/targetservers.json), so one bundle deploys to every stage. -->
     <LoadBalancer>
       <Server name="turnstile-gateway"/>
     </LoadBalancer>

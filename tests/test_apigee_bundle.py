@@ -5,6 +5,7 @@ edge limits leave room for every legitimate gateway request, and that the API ke
 reaches the gateway.
 """
 
+import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -68,7 +69,14 @@ def test_the_target_does_not_replace_the_agent_authorization():
     target = _xml(BUNDLE / "targets" / "default.xml")
     assert target.find(".//Authentication") is None  # the gateway verifies the agent's token
     assert target.findtext(".//Path") == "/mcp"
-    assert target.findtext(".//SSLInfo/Enforce") == "true"
+    for env in ("test", "prod"):
+        servers = json.loads(
+            (BUNDLE.parent / "environments" / env / "targetservers.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        server = next(s for s in servers if s["name"] == "turnstile-gateway")
+        assert server["sSLInfo"]["enforce"] is True and server["port"] == 443
     assert target.find(".//LoadBalancer/Server").get("name") == "turnstile-gateway"
 
 
