@@ -26,6 +26,7 @@
       </Step>
       <Step>
         <Name>JTP-JSONThreatProtection</Name>
+        <Condition>request.content != null</Condition>
       </Step>
       <Step>
         <Name>AM-StripAPIKey</Name>

@@ -14,6 +14,16 @@
     <Properties>
       <Property name="io.timeout.millis">30000</Property>
     </Properties>
-    <URL>https://turnstile.internal.example.com/mcp</URL>
+    <SSLInfo>
+      <Enabled>true</Enabled>
+      <Enforce>true</Enforce>
+      <IgnoreValidationErrors>false</IgnoreValidationErrors>
+    </SSLInfo>
+    <!-- Target server "turnstile-gateway" is defined per environment (the internal load
+         balancer's address), so the same bundle deploys to test and production. -->
+    <LoadBalancer>
+      <Server name="turnstile-gateway"/>
+    </LoadBalancer>
+    <Path>/mcp</Path>
   </HTTPTargetConnection>
 </TargetEndpoint>

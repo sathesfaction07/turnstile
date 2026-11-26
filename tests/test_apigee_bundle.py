@@ -67,4 +67,12 @@ def test_rate_limits_are_per_app_and_answer_with_429():
 def test_the_target_does_not_replace_the_agent_authorization():
     target = _xml(BUNDLE / "targets" / "default.xml")
     assert target.find(".//Authentication") is None  # the gateway verifies the agent's token
-    assert target.findtext(".//URL").endswith("/mcp")
+    assert target.findtext(".//Path") == "/mcp"
+    assert target.findtext(".//SSLInfo/Enforce") == "true"
+    assert target.find(".//LoadBalancer/Server").get("name") == "turnstile-gateway"
+
+
+def test_threat_protection_only_runs_on_requests_with_a_body():
+    steps = _xml(BUNDLE / "proxies" / "default.xml").find("PreFlow/Request")
+    jtp = next(s for s in steps if s.findtext("Name") == "JTP-JSONThreatProtection")
+    assert jtp.findtext("Condition") == "request.content != null"

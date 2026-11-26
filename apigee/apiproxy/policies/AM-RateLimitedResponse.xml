@@ -10,5 +10,4 @@
     <Payload contentType="application/json">{"error": "rate limit for this agent team reached", "code": "rate_limited"}</Payload>
   </Set>
   <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-  <AssignTo createNew="false" transport="http" type="response"/>
 </AssignMessage>
