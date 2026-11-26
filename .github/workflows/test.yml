@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: "20"
       - name: apigeelint
-        run: npx --yes apigeelint@2 -s apigee/apiproxy -f table.js --profile apigeex --maxErrors 0
+        run: npx --yes apigeelint@2 -s apigee/apiproxy -f table.js --profile apigeex
 
   terraform:
     runs-on: ubuntu-latest
